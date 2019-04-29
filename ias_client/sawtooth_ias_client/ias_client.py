@@ -37,7 +37,7 @@ class IasClient:
 
     def get_signature_revocation_lists(self,
                                        gid='',
-                                       path='/attestation/sgx/v2/sigrl'):
+                                       path='/attestation/sgx/v3/sigrl'):
         """
         @param gid: Hex, base16 encoded
         @param path: URL path for sigrl request
@@ -67,7 +67,7 @@ class IasClient:
                 if the header does not contain a signature.
         """
 
-        path = '/attestation/sgx/v2/report'
+        path = '/attestation/sgx/v3/report'
         url = urljoin(self._ias_url, path)
         LOGGER.debug("Posting attestation verification request to: %s",
                      url)
